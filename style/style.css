@@ -103,6 +103,10 @@ a svg {
         margin-left: auto;
         margin-right: auto;
     }
+
+    #contatoContent .accordion .accordion-item {
+        display: none;
+    }
 }
 
 .contato .accordion-button {
