@@ -1,0 +1,271 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1071!important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler {
+    padding: 0px !important;
+    border-color: transparent !important;
+    color: transparent !important;
+}
+
+#offcanvasExample {
+    width: 300px;
+}
+
+.offcanvas-header .btn-close {
+    margin: 0px !important;
+}
+
+.offcanvas-footer {
+    padding: 16px;
+}
+
+.dropdown ul.show {
+    position: absolute;
+    inset: auto auto 0px 0px;
+    margin: 0px;
+    transform: translate(0px, -34px);
+}
+
+a svg {
+    margin-right: 2px;
+}
+
+.mt-navbar {
+    margin-top: 60px;
+}
+
+.lugar {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.781);
+}
+
+.lugar h2 {
+    border-bottom: 1px dashed #5c6818;
+    margin: 0;
+    font-size: 20px;
+}
+
+.lugar h2 a {
+    color: #2c11af;
+    font-weight: bold;
+}
+
+.lugar .carousel-item img {
+    width: 100%;
+    height: auto;
+    max-width: max-content;
+    max-height: max-content;
+}
+
+.lugar img {
+    width: 100%;
+    max-width: max-content;
+    height: auto;
+    max-height: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2px;
+}
+
+.lugar a {
+    color: #2c88a7;
+    text-decoration: none;
+}
+
+.lugar a:hover {
+    color: white;
+    background-color: rgb(0, 0, 0);
+}
+
+.lugar .btn-group {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.lugar .mapa {
+    width: 100%;
+    height: 500px;
+}
+
+.lugar .modal {
+    height: calc(100% - 4rem) !important;
+    margin-top: 60px !important;
+}
+
+@media only screen and (min-width: 600px) {
+    .contato .accordion-body {
+        width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #contatoContent .accordion .accordion-item {
+        display: none;
+    }
+}
+
+.contato .accordion-button {
+    text-align: center !important;
+    display: inline-block;
+}
+
+.contato form textarea,
+.contato form input {
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-radius: 0px;
+}
+
+.focus-input::before {
+    content: "";
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transition: all 0.4s;
+    background-color: rgb(12, 99, 228, 1) !important;
+}
+
+.focus-input {
+    box-shadow: none;
+    border-bottom: 2px solid rgba(206, 212, 218, 1) !important;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s  !important;
+    -moz-transition: all 0.4s !important;
+    transition: all 0.4s  !important;
+}
+
+.focus-input:focus {
+    box-shadow: none !important;
+    border-bottom: 2px solid rgb(12, 99, 228, 1) !important;
+}
+
+.contato form button {
+    margin-top: 2px !important;
+    width: 80% !important;
+}
+
+.profile-img {
+    width: 100% !important;
+    max-width: max-content !important;;
+    height: auto !important;
+    max-height: max-content !important;
+}
+
+.profile-name:focus,
+.profile-name {
+    color: black !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
+    font-size: xx-large !important;
+    font-weight: bold !important;
+    border-radius: 0px !important;
+    outline: 0px !important;
+    box-shadow: none !important;
+}
+
+.profile-email:focus,
+.profile-email {
+    text-align: center !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
+    font-size: large !important;
+    font-weight: bold !important;
+    border-radius: 0px !important;
+    outline: 0px !important;
+    box-shadow: none !important;
+}
+
+td button {
+    width: 100%; height: 100%;
+}
+
+.mb-footer {
+    margin-bottom: 60px;
+}
+
+footer p {
+    text-align: center;
+    font-size: 10px;
+    margin-bottom: 5px;
+}
+
+footer a:hover,
+footer {
+    font-size: smaller;
+}
+
+.avatar-upload {
+    position: relative;
+    margin: 50px auto;
+}
+
+.avatar-upload .avatar-edit {
+    position: absolute;
+    right: 28px;
+    z-index: 1;
+    top: 30px;
+}
+
+.avatar-upload .avatar-preview {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    border-radius: 100%;
+    border: 6px solid #F8F8F8;
+    box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 10%);
+}
+
+.avatar-upload .avatar-edit input {
+    display: none;
+}
+
+.avatar-upload .avatar-edit input + label {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0;
+    border-radius: 100%;
+    background: #FFFFFF;
+    border: 1px solid transparent;
+    box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 12%);
+    cursor: pointer;
+    font-weight: normal;
+    transition: all 0.2s ease-in-out;
+}
+
+.avatar-upload .avatar-edit input + label:after {
+    content: \F4CB;
+    font-family: 'FontAwesome';
+    color: #757575;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+}
+
+.avatar-upload .avatar-preview > div {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#imagePreview {
+    background-image: url(../images/500x500.jpg);
+}
+
+.carousel-control-prev, .carousel-control-next {
+    color: black !important;
+    font-size: xx-large;
+}
