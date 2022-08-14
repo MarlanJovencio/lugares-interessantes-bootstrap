@@ -112,65 +112,47 @@
         </div>
     </nav>
 
-    <section class="conteudo mt-navbar">
+    <section class="conteudo mt-navbar" id="conteudo">
+        <script src="./scripts/generate-images.js"></script>
+
+        <!-- Estrutura 
         <article class="lugar">
-            <h2> Parque Estadual da Cachoeira da Fumaça </h2>
-            <div id="carouselImagemsLugar1" class="carousel slide" data-ride="carousel">
+            <h2> {{lugar[i].title}} </h2>
+            <div id="carouselImagemsLugar{{i+1}}" class="carousel slide" data-ride="carousel">
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselImagemsLugar1" data-bs-slide-to="0"
+                    <button type="button" data-bs-target="#carouselImagemsLugar{{i}}" data-bs-slide-to="{{lugar[i].images.j}}"
                         class="active"></button>
-                    <button type="button" data-bs-target="#carouselImagemsLugar1" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#carouselImagemsLugar1" data-bs-slide-to="2"></button>
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="./images/900x400.jpg"
-                            alt="Imagem 900x400">
+                        <img class="d-block w-100" src="{{lugar[i].images[j].source}}" alt="{{lugar[i].images[j].description}}">
                         <div class="carousel-caption">
-                            <h3>Img 900x400</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="./images/901x400.jpg"
-                            alt="Imagem 901x400">
-                        <div class="carousel-caption">
-                            <h3>Img 901x400</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="./images/902x400.jpg"
-                            alt="Imagem 902x400">
-                        <div class="carousel-caption">
-                            <h3>Img 902x400</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <h3>{{lugar[i].images[j].title}}</h3>
+                            <p>{{lugar[i].images[j].description}}</p>
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselImagemsLugar1"
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselImagemsLugar{{i}}"
                     data-bs-slide="prev"> <span class="carousel-control-prev-icon"></span> </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselImagemsLugar1"
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselImagemsLugar{{i}}"
                     data-bs-slide="next"> <span class="carousel-control-next-icon"></span> </button>
             </div>
 
             <div>
-                <div aria-labelledby="modalLugar1_title" aria-modal="true" class="modal fade" id="modalLugar1"
+                <div aria-labelledby="modalLugar{{i}}_title" aria-modal="true" class="modal fade" id="modalLugar{{i}}"
                     role="dialog" style="display: none;" tabindex="-1">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="modalLugar1_title">
-                                    Parque Estadual da Cachoeira da Fumaça
+                                <h5 class="modal-title" id="modalLugar{{i}}_title">
+                                    {{lugar[i].title}}
                                 </h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <p>O Parque Estadual da Cachoeira da Fumaça foi criado através do Decreto nº 2.791-ES (24 de agosto de 1984) e complementado através do Decreto nº 4.568-E (21 de setembro de 1990), quando então o Governo do Estado, atendendo uma demanda dos moradores dos municípios de Alegre, Guaçuí e Castelo e de outros Estados da Federação, desapropriou uma área de 27 ha, coberta basicamente de pastagem, mas que continha em seu interior a cachoeira do rio Braço Norte Direito ou Cachoeira da Fumaça, que atraía milhares de visitantes devido à sua grande beleza cênica. </p>
-                                <p>A sua cobertura original é do tipo Floresta Estacional Semidecidual, que, ao longo dos anos, foi sendo recomposta, com plantios de essências nativas/frutíferas. Apesar de suas dimensões implicarem em uma fauna reduzida, observou-se, com o replantio, o retorno de aves e pássaros como siriema, beija-flor, rolinha, bem-te-vi, gavião, jurutí, dentre outros.</p>
-                                <p>O rio Braço Norte Direito além de contribuir com a beleza cênica do local, através da Cachoeira da Fumaça com seus 140 metros de queda, é um afluente do rio Itapemirim, abastecendo vários centros urbanos. </p>
-                                <p><a href="https://iema.es.gov.br/PECF">Mais informações aqui.</a></p>
+                                <p>{{lugar[i].informations[j]}}</p>
+                                <p><a href="{{lugar[i].moreInformationsUrl}}">Mais informações aqui.</a></p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
@@ -179,20 +161,20 @@
                     </div>
                 </div>
 
-                <div aria-labelledby="modalLugarLocalizacao1_title" aria-modal="true" class="modal fade"
-                    id="modalLugarLocalizacao1" role="dialog" style="display: none;" tabindex="-1">
+                <div aria-labelledby="modalLugarLocalizacao{{i}}_title" aria-modal="true" class="modal fade"
+                    id="modalLugarLocalizacao{{i}}" role="dialog" style="display: none;" tabindex="-1">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="modalLugarLocalizacao1_title">
-                                    Parque Estadual da Cachoeira da Fumaça
+                                <h5 class="modal-title" id="modalLugarLocalizacao{{i}}_title">
+                                    {{lugar[i].title}}
                                 </h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <iframe class="mapa"
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d233.37224714501744!2d-41.60444467246787!3d-20.6306520714613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbbbf6081f8f9ed%3A0xd25574c4bf747e27!2sCachoeira%20da%20Fuma%C3%A7a!5e0!3m2!1spt-BR!2sbr!4v1659220678234!5m2!1spt-BR!2sbr"
+                                    src="{{{{lugar[i].mapaSource}}}}"
                                     width="100%" height="500px" style="border:0;" allowfullscreen="" loading="lazy"
                                     referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
@@ -204,7 +186,7 @@
                 </div>
 
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalLugar1">
+                    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalLugar{{i}}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-info-circle" viewBox="0 0 16 16">
                             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -214,7 +196,7 @@
                         Mais sobre este local
                     </button>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#modalLugarLocalizacao1">
+                        data-bs-target="#modalLugarLocalizacao{{i}}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-map" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
@@ -224,236 +206,7 @@
                     </button>
                 </div>
             </div>
-        </article>
-
-        <article class="lugar">
-            <h2>
-                Túnel dos Ingleses de Cima
-            </h2>
-            <div id="carouselImagemsLugar2" class="carousel slide" data-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselImagemsLugar2" data-bs-slide-to="0"
-                        class="active"></button>
-                    <button type="button" data-bs-target="#carouselImagemsLugar2" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#carouselImagemsLugar2" data-bs-slide-to="2"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="./images/903x400.jpg"
-                            alt="Imagem 903x400">
-                        <div class="carousel-caption">
-                            <h3>Imagem 903x400</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="./images/904x400.jpg"
-                            alt="Imagem 903x400">
-                        <div class="carousel-caption">
-                            <h3>Imagem 903x400</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="./images/905x400.jpg"
-                            alt="Imagem 905x400">
-                        <div class="carousel-caption">
-                            <h3>Imagem 905x400</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselImagemsLugar2"
-                    data-bs-slide="prev"> <span class="carousel-control-prev-icon"></span> </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselImagemsLugar2"
-                    data-bs-slide="next"> <span class="carousel-control-next-icon"></span> </button>
-            </div>
-            <div>
-                <div aria-labelledby="modalLugar2_title" aria-modal="true" class="modal fade" id="modalLugar2"
-                    role="dialog" style="display: none;" tabindex="-1">
-                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="modalLugar2_title">
-                                    Túnel dos Ingleses de Cima
-                                </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <p> O túnel fazia parte do trecho ferroviário da antiga Leopoldina Railway, que cortava
-                                    o município de Alegre. Possui 180m de extensão, aproximadamente 06m de altura e foi
-                                    construído com pedras sobrepostas. </p>
-                                <p> Logo na entrada lê-se a data de 12/07/1915, referindo-se à data de inauguração do
-                                    local. Têm-se informações que mesmo antes desta data, já por volta de 1905, havia
-                                    passagens de trens por esse trecho. </p>
-                                <p><a
-                                        href="http://www.portalturismobrasil.com.br/atracao/539/Tunel-dos-Ingleses-de-Cima">Mais
-                                        informações aqui.</a></p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div aria-labelledby="modalLugarLocalizacao2_title" aria-modal="true" class="modal fade"
-                    id="modalLugarLocalizacao2" role="dialog" style="display: none;" tabindex="-1">
-                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="modalLugarLocalizacao2_title">
-                                    Túnel dos Ingleses de Cima
-                                </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <iframe class="mapa"
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14922.566256988357!2d-41.539609792187484!3d-20.76531720000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbbebd64faaaccd%3A0xedbca7740d7e0e95!2zVMO6bmVs!5e0!3m2!1spt-BR!2sbr!4v1659221435018!5m2!1spt-BR!2sbr"
-                                    width="100%" height="500px" style="border:0;" allowfullscreen="" loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalLugar2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-info-circle" viewBox="0 0 16 16">
-                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                            <path
-                                d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                        </svg>
-                        Mais sobre este local
-                    </button>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#modalLugarLocalizacao2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-map" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103zM10 1.91l-4-.8v12.98l4 .8V1.91zm1 12.98 4-.8V1.11l-4 .8v12.98zm-6-.8V1.11l-4 .8v12.98l4-.8z" />
-                        </svg>
-                        Localização
-                    </button>
-                </div>
-            </div>
-        </article>
-
-        <article class="lugar">
-            <h2>
-                Praça da Prefeitura Municipal de Alegre
-            </h2>
-            <div id="carouselImagemsLugar3" class="carousel slide" data-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselImagemsLugar3" data-bs-slide-to="0" class="active"></button>
-                    <button type="button" data-bs-target="#carouselImagemsLugar3" data-bs-slide-to="1"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="./images/906x400.jpg"
-                            alt="Imagem 906x400">
-                        <div class="carousel-caption">
-                            <h3>Imagem 906x400</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="./images/907x400.jpg"
-                            alt="Imagem 907x400">
-                        <div class="carousel-caption">
-                            <h3>Imagem 907x400</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselImagemsLugar3"
-                    data-bs-slide="prev"> <span class="carousel-control-prev-icon"></span> </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselImagemsLugar3"
-                    data-bs-slide="next"> <span class="carousel-control-next-icon"></span> </button>
-            </div>
-            <div>
-                <div aria-labelledby="modalLugar3_title" aria-modal="true" class="modal fade" id="modalLugar3"
-                    role="dialog" style="display: none;" tabindex="-1">
-                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="modalLugar3_title">
-                                    Praça da Prefeitura Municipal de Alegre
-                                </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <p> Em 1924 assumia mandato como prefeito o Sr. Vicente Caetano, iniciando o aterro do
-                                    brejo que existia no local em 1925, fazendo o alicerce da futura Prefeitura
-                                    Municipal, além do jardim que seria o primeiro da cidade. Foi somente em 1934,
-                                    governo de Messias Chaves, que as instalações passaram para o prédio já concluído.
-                                    As características originais foram remodeladas na década de 80. </p>
-                                <p> Anteriormente, a Prefeitura Municipal funcionou no Largo Municipal, hoje Praça Rui
-                                    Barbosa, e na Rua XV de Novembro. </p>
-                                <p><a
-                                        href="https://turismo.campoalegre.sc.gov.br/o-que-fazer/item/prefeitura-municipal">Mais
-                                        informações aqui.</a></p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div aria-labelledby="modalLugarLocalizacao3_title" aria-modal="true" class="modal fade"
-                    id="modalLugarLocalizacao3" role="dialog" style="display: none;" tabindex="-1">
-                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="modalLugarLocalizacao3_title">
-                                    Praça da Prefeitura Municipal de Alegre
-                                </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <iframe class="mapa"
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2285.534600292372!2d-41.53328105807307!3d-20.763275347317443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbbebc019050107%3A0x77f997f84f5a85be!2sPrefeitura%20Municipal%20de%20Alegre!5e1!3m2!1spt-BR!2sbr!4v1659221791397!5m2!1spt-BR!2sbr"
-                                    width="100%" height="500px" style="border:0;" allowfullscreen="" loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalLugar3">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-info-circle" viewBox="0 0 16 16">
-                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                            <path
-                                d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                        </svg>
-                        Mais sobre este local
-                    </button>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#modalLugarLocalizacao3">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-map" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103zM10 1.91l-4-.8v12.98l4 .8V1.91zm1 12.98 4-.8V1.11l-4 .8v12.98zm-6-.8V1.11l-4 .8v12.98l4-.8z" />
-                        </svg>
-                        Localização
-                    </button>
-                </div>
-            </div>
-        </article>
+        </article> -->
     </section>
 
     <section class="contato" id="contatoContent">

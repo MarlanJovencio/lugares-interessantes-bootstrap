@@ -264,3 +264,8 @@ footer {
 #imagePreview {
     background-image: url(../images/500x500.jpg);
 }
+
+.carousel-control-prev, .carousel-control-next {
+    color: black !important;
+    font-size: xx-large;
+}
