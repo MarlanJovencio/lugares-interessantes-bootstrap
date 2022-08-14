@@ -1,4 +1,4 @@
-const src = document.location.origin + '/';
+const src = './';
 const articles = [
     {
         title: 'Parque Estadual da Cachoeira da Fumaça',
